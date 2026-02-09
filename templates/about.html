@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fraud Detection</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>FrauDtector</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/model">Model</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <!-- About the Model Section -->
+        <section class="mb-5">
+            <h1 class="display-4 mb-4">About the Fraud Detection Model</h1>
+            <p class="lead">
+                A machine learning-based fraud detection system that achieved 99.43% accuracy in identifying
+                fraudulent transactions using XGBoost classification.
+            </p>
+            <div class="alert alert-info" role="alert">
+                <strong>Dataset:</strong> 10,000 synthetic transactions | <strong>Features:</strong> Transaction amount,
+                country, transaction type, merchant category | <strong>Challenge:</strong> Highly imbalanced dataset (5%
+                fraud rate)
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="mb-5">
+            <h2 class="mb-3">How It Works</h2>
+            <p>
+                The fraud detection system analyzes transaction patterns using a comprehensive machine learning
+                approach:
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>1. Data Analysis</h5>
+                    <p class="small">
+                        Analyzed 10,000 synthetic transactions with a 5% fraud rate. Conducted exploratory data
+                        analysis using correlation heatmaps and feature distribution analysis to identify key fraud
+                        indicators.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>2. Feature Engineering</h5>
+                    <p class="small">
+                        Removed low-correlation features (hour, user_id) and applied StandardScaler to transaction
+                        amounts. Used One-Hot Encoding for categorical features including country, transaction type,
+                        and merchant category.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>3. Model Selection</h5>
+                    <p class="small">
+                        Compared three algorithms: Logistic Regression (98.87% accuracy), Random Forest (99.03%
+                        accuracy),
+                        and XGBoost (99.43% accuracy). XGBoost was selected for its superior fraud detection recall of
+                        98.67%.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>4. Pipeline Deployment</h5>
+                    <p class="small">
+                        Created a scikit-learn pipeline integrating preprocessing and XGBoost classification. The model
+                        handles class imbalance using scale_pos_weight and optimized hyperparameters for real-time
+                        prediction.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Details Section -->
+        <section class="mb-5">
+            <h2 class="mb-3">Model Details</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Methodology</h4>
+                    <p><strong>XGBoost Classifier</strong></p>
+                    <p class="mb-2">
+                        After comparing multiple algorithms (Logistic Regression, Random Forest, and XGBoost),
+                        XGBoost achieved the best performance with 99.43% accuracy and 98.67% recall for
+                        fraud detection.
+                    </p>
+                    <div class="small">
+                        <p class="mb-1"><strong>Data Processing Done:</strong></p>
+                        <ul class="mb-2">
+                            <li>StandardScaler for transaction amounts</li>
+                            <li>One-Hot Encoding for categorical features</li>
+                            <li>Feature selection based on correlation analysis</li>
+                        </ul>
+                        <p class="mb-1"><strong>Key Findings:</strong></p>
+                        <ul class="mb-0">
+                            <li>Transaction amount: 47% feature importance</li>
+                            <li>Country (Nigeria): 22% feature importance</li>
+                            <li>Addressed class imbalance using scale_pos_weight</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Performance Metrics</h4>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="card text-center border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">99.43%</h5>
+                                    <p class="card-text small">Accuracy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-center border-info">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">91%</h5>
+                                    <p class="card-text small">Precision</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-center border-warning">
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning">99%</h5>
+                                    <p class="card-text small">Recall</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-center border-primary">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">95%</h5>
+                                    <p class="card-text small">F1-Score</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="small text-muted mt-2 mb-0">
+                        Tested on 3,000 transactions (70/30 train-test split)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-5">
+            <h2 class="mb-3">Project Highlights</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>99% Fraud Detection Rate:</strong> Successfully identifies 99 out of 100 fraudulent
+                            transactions
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Low False Positive Rate:</strong> Only 0.5% of legitimate transactions flagged as
+                            fraud
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Comprehensive EDA:</strong> In-depth exploratory data analysis with visualizations
+                            and insights
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Multiple Model Comparison:</strong> Evaluated 3 different algorithms for optimal
+                            performance
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Feature Importance Analysis:</strong> Identified transaction amount and geographic
+                            location as key fraud indicators
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Production Pipeline:</strong> Sklearn pipeline ready for deployment and integration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 Toh Dai En</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
